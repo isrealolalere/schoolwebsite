@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{% endblock %}</title>
+
+        <!--CUSTOM STYLE-->
+        <!-- <link
+        href="{% static 'css\style.css' %}"
+        rel="stylesheet"
+        /> -->
+        <link
+        href="{% static 'css\navbar.css' %}"
+        rel="stylesheet"
+        />
+        {% block extra_style %}
+        {% endblock extra_style %}
+        <!--END OF CUSTOM STYLE-->
+        
+        <link
+        href="{% static 'mdb5\css\mdb.dark.min.css' %}"
+        rel="stylesheet"
+        />
+        <link
+        href="{% static 'mdb5\css\mdb.dark.min.css.map' %}"
+        rel="stylesheet"
+        />
+        <link
+        href="{% static 'mdb5\css\mdb.dark.rtl.min.css' %}"
+        rel="stylesheet"
+        />
+        <link
+        href="{% static 'mdb5\css\mdb.min.css' %}"
+        rel="stylesheet"
+        />
+        <link
+        href="{% static 'mdb5\css\mdb.rtl.min.css' %}"
+        rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <!--MDB JAVASCRIPT CODE-->
+        <script src="{% static 'mdb5\js\mdb.min.js' %}"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <!--navbar-->
+        {% block nav_bar %}
+            {% include 'khbs-online/navbar.html' %}
+        {% endblock %}
+
+        <!--alert message div-->
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="me-auto w-100 text-center" id="alert-container" style="border-radius: 10px; box-shadow: 0px 0px 3px grey;"></div>
+            {% endfor %}
+        {% endif %}
+
+        
+        {% block header %}
+        <div class="parent">
+            <div class="header">
+                <h2>Welcome to King's Heart Bilingual School</h2>
+                <hr class="w-25 mt-3 me-auto mt-1 mb-1 text-light">
+                <h3><i>Building genius since 2008</i></h3>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block content %} 
+        {% endblock %}
+
+        <!--footer section-->
+        <div class="mt-5">
+            {% include 'khbs/footer.html' %}
+        </div>
+
+
+        <!--extra script-->
+        {% block extra_script %}
+        {% endblock extra_script %}
+
+        {% if messages %}
+        {% for msg in messages %}
+        <script>
+            // Get the alert message and type from Django template variables
+            var alertMessage = "{{ msg }}";
+
+            // Function to display the alert message
+            function showAlert(message) {
+                // Create a new div element for the alert
+                var alertDiv = document.createElement('div');
+                alertDiv.classList.add('alert', 'fade', 'show'); // Add CSS classes to style the alert
+                alertDiv.textContent = message; // Set the alert message text
+
+                // Find the container element where the alert will be displayed
+                var container = document.getElementById('alert-container');
+                container.appendChild(alertDiv); // Append the alert to the container
+
+                // Remove the alert after a specified duration (e.g., 5000 milliseconds = 5 seconds)
+                setTimeout(function() {
+                alertDiv.classList.remove('show'); // Remove the "show" class to fade out the alert
+                alertDiv.parentNode.removeChild(alertDiv); // Remove the alert element from the DOM
+                }, 5000);
+            }
+
+            // Call the showAlert function with the alert message and type
+            showAlert(alertMessage);
+        </script>
+        {% endfor %}
+        {% endif %}
+
+    </body>
+</html>

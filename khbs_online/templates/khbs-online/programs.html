@@ -1,0 +1,105 @@
+{% extends 'khbs-online/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Programs - KHBS{% endblock %}
+
+{% block extra_style %}
+<link
+href="{% static 'css\programs.css' %}"
+rel="stylesheet"
+/>
+{% endblock extra_style %}
+
+
+{% block header %}
+<div class="container-slider mb-5">
+    <main>
+        <img src="{% static 'khbs-img/new/new (5).jpeg' %}" alt="" class="slide">
+        <img src="{% static 'khbs-img/new/new (4).jpeg' %}" alt="" class="slide">
+        <img src="{% static 'khbs-img/new/new (2).jpeg' %}" alt="" class="slide">
+    </main>
+
+    <div class="btn-nav">
+        <button onclick="goPrev()">
+            Prev
+        </button>
+        <button onclick="goNext()">
+            Next
+        </button>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container-div">
+    <div class="adult-programs">
+        <h3 class="me-auto text-center mt-5 mb-3" style="color: blue;">KHBS ONLINE ADULT PROGRAMS</h3>
+        <div class="text">
+            Learn to speak, read and write English langauage. <br>
+            Are you a / an :
+            <ul>
+                <li>Government proffessional worker?</li>
+                <li>Bussiness owner?</li>
+                <li>Office worker?</li>
+                <li>Trader?</li>
+                <li>Teacher?</li>
+                <li>Student?</li>
+            </ul>
+            Here comes the opportunity for you with King's Heart Bilingual School online class
+            <div class="sp-programs">
+                {% for sp_program in special_programs %}
+                    <div class="each-sp">
+                        <div class="eng-img">
+                            <video class="w-100 h-100" controls controlsList="nodownload">
+                                <source src="{{ sp_program.video_file.url }}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="eng-text">
+                            {{ sp_program.title }} <br>
+                            {{ sp_program.description }}
+                            <br>
+                            <a href="{% url 'online:add-sp-course' title=sp_program.title %}" class="btn btn-primary mb-5">Register</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <h3 class="me-auto text-center mt-5 mb-3">KHBS ONLINE COURSES</h3>
+    <!--KHBS ONLINE COURSES-->
+    <div class="programs">
+
+        <!--videos-->
+        {% for program in all_programs %}
+            <a href="{% url 'online:add-course' title=program.title %}" style="color: inherit; text-decoration: none;">
+                <div class="course">
+                    <div class="img">
+                        <video class="w-100 h-100" controls controlsList="nodownload">
+                            <source src="{{ program.video_file.url }}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="desc">
+                        {{ program.title }} <br>
+                        {{ program.description }}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
+
+<!--extra script-->
+{% block extra_script %}
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+<!--extra script-->
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock extra_script %}

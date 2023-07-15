@@ -1,0 +1,177 @@
+@media (min-width:768px) {
+    .container-div{
+        width: 100%;
+    }
+
+    .programs{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .programs .course{
+        margin: auto;
+        margin-inline: 40px;
+        margin-top: 20px;
+        width: 250px;
+    }
+
+    .programs .course .img{
+        width: 100%;
+        height: 200px;
+        background-color: grey;
+    }
+
+    .programs .course .desc{
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .adult-programs {
+        width: 90%;
+        margin: auto;
+    }
+
+    .adult-programs .eng-img{
+        width: 50%;
+        height: 350px;
+        background-color: gray;
+        margin-top: 20px;
+    }
+
+    .adult-programs .eng-text{
+        margin-top: 10px;
+        width: 50%;
+    }
+
+
+
+    .container-slider{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    main{
+        width: 90%;
+        height: 400px;
+        box-shadow: 0px 0px 3px grey;
+        margin: auto;
+        margin-top: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slide{
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        position: absolute;
+    }
+    
+    .btn-nav{
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .btn-nav button{
+        padding: 5px;
+        border-style: none;
+        margin-inline: auto;
+        padding-inline: 10px;
+        border-radius: 12px;
+    }
+    .btn-nav button:hover{
+        color: white;
+        background-color: blue;
+    }
+
+
+}
+
+/* for small screen */
+@media (max-width:767px) {
+    .container-div{
+        width: 100%;
+    }
+
+    .programs{
+        width: 100%;
+    }
+
+    .programs .course{
+        margin: auto;
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    .programs .course div{
+        margin: auto;
+        width: 50%;
+        margin-inline: 15px;
+    }
+    .programs .course .img{
+        width: 100%;
+        height: 200px;
+        background-color: grey;
+    }
+
+    .adult-programs {
+        width: 85%;
+        margin: auto;
+    }
+
+    .adult-programs .eng-img{
+        width: 90%;
+        margin: auto;
+        height: 200px;
+        background-color: gray;
+        margin-top: 20px;
+    }
+
+    .adult-programs .eng-text{
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .container-slider{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    main{
+        width: 90%;
+        height: 400px;
+        box-shadow: 0px 0px 3px grey;
+        margin: auto;
+        margin-top: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slide{
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        position: absolute;
+    }
+    
+    .btn-nav{
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .btn-nav button{
+        padding: 5px;
+        border-style: none;
+        margin-inline: auto;
+        padding-inline: 10px;
+        border-radius: 12px;
+    }
+    .btn-nav button:hover{
+        color: white;
+        background-color: blue;
+    }
+
+
+}

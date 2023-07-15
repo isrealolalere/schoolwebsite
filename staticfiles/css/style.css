@@ -1,0 +1,90 @@
+@media (min-width:768px) {
+
+    .navbar {
+        background-color: brown;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: right;
+        width: 100%;
+        position: fixed;
+        display: none;
+    }
+    .navbar .container-fluid .collapse{
+        margin-left: 700px;
+    }
+    .parent{
+        background-image: url("../img/cta-bg.jpg");
+        height: 500px;
+        margin: 0;
+    }
+    .header{
+        text-align: center;
+        padding-top: 200px;
+    }
+
+    .header h2{
+        color: White;
+    }
+    .header h3{
+        color: gold;
+    }
+
+    .dropdown-menu{
+        margin-left: 0;
+        background-color: black;
+        color: blue;
+    }
+
+    .online-btn > a:link {
+        border-radius:20px;
+        color:brown;
+        background-color: white;
+
+    }
+}
+
+/* for small screen */
+@media (max-width:767px) {
+    .navbar {
+        background-color: brown;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: right;
+        width: 100%;
+        top: 0;
+        position: fixed;
+    }
+
+    .parent{
+        background-image: url("../img/cta-bg.jpg");
+        height: 500px;
+        margin: 0;
+    }
+
+    .header{
+        text-align: center;
+        padding-top: 200px;
+    }
+
+    .header h2{
+        color: White;
+    }
+    .header h3{
+        color: gold;
+    }
+
+    .dropdown-menu{
+        margin-left: 0;
+        background-color: black;
+        color: blue;
+    }
+
+    .online-btn > a:link {
+        border-radius:20px;
+        color:brown;
+        background-color: white;
+        width: 200px;
+        margin: auto;
+
+    }
+}

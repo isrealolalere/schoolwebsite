@@ -1,0 +1,99 @@
+{% extends 'khbs-online/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block extra_style %}
+<link
+href="{% static 'css\profile.css' %}"
+rel="stylesheet"
+/>
+{% endblock extra_style %}
+
+{% block header %}
+<div class="mt-3 mb-5">
+    
+</div>
+{% endblock header %}
+
+{% block content %}
+  <main>
+    <!-- Profile Content -->
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4 .shadow-5-strong">
+          <!-- Profile Card -->
+          <div class="card">
+            <img src="{{ user_info.user_img.url }}" class="card-img-top" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%; margin: auto;">
+            <div class="card-body bg-dark text-light">
+              <h5 class="card-title">{{ user_info.user.first_name }} {{ user_info.user.last_name }}</h5>
+              <hr class="text-light">
+              <p class="card-text">Username: {{ user_info.user.username }}</p>
+              <hr class="text-light">
+              <p class="card-text">Email: {{ user_info.user.email }}</p>
+              <hr class="text-light">
+              <a href="#" class="btn btn-primary">Edit Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <!-- Profile Details -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center mb-3">Your Courses</h5>
+              <div class="allcourses">
+                {% if user_courses.courses.all %}
+                  {% for course_instance in user_courses.courses.all %}
+                  <div class="course mb-3">
+                      <div class="img" style="width: 200px; height: 150px; background-color: gray;">
+                        <video class="w-100 h-100" controls controlsList="nodownload">
+                          <source src="{{ course_instance.video_file.url }}" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="desc mt-3">
+                          {{ course_instance.title }}
+                          <br>
+                          <a href="" class="btn btn-sm btn-primary">Full course</a> 
+                          <span>
+                            <a href="{% url 'online:remove-course' title=course_instance.title %}" class="btn btn-sm btn-primary">Remove</a>
+                          </span>
+                      </div>
+                  </div>
+                  {% endfor %}
+                {% else %}
+                    <h3>No course taken</h3>
+                {% endif %}
+              </div>
+              <br><br>
+              <hr>
+              <!--special programs-->
+              <h3 class="me-auto text-center mb-5">Special Programs</h3>
+              <div class="allcourses">
+                {% if user_courses.special_courses.all %}
+                  {% for course_instance in user_courses.special_courses.all %}
+                  <div class="course mb-3">
+                      <div class="img" style="width: 200px; height: 150px; background-color: gray;">
+                        <video class="w-100 h-100" controls controlsList="nodownload">
+                          <source src="{{ course_instance.video_file.url }}" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="desc mt-3">
+                          {{ course_instance.title }}
+                          <br>
+                          <a href="{% url 'online:course-series' id=course_instance.id %}" class="btn btn-sm btn-primary">Full course</a>
+                          <span>
+                            <a href="{% url 'online:remove-sp-course' title=course_instance.title %}" class="btn btn-sm btn-primary">Remove</a>
+                          </span>
+                      </div>
+                  </div>
+                  {% endfor %}
+                {% else %}
+                    <h3>No special course taken</h3>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

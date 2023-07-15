@@ -1,0 +1,206 @@
+@media (min-width:768px) {
+    .first-div{
+        display: flex;
+        margin: auto;
+    }
+
+    .first-div .mission, .vision, .program{
+        margin-inline: 50px;
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: -50px;
+    }
+
+    .first-div .text{
+        /* use shadow instead of bg color */
+        border-radius: 15px;
+        padding: 10px;
+        background-image: url("../khbs-img/new/new1.3a0786953d2c.jpeg");
+        width: 100% !important;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: auto;
+        color: white;
+        padding-top: 25px;
+        font-weight: bold;
+    }
+
+    .first-div div h3 {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .second-div, .third-div{
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .second-div .about h2, .third-div h2{
+        text-align: center;
+    }
+
+    .second-div .about{
+        width: 90%;
+        margin: auto;
+    }
+
+    .event{
+        display: flex;
+        margin: auto;
+        margin-top: 70px;
+    }
+    .event div{
+        width: 200px;
+        margin-inline: auto;
+    }
+    .event div img{
+        width: 280px;
+        height: 300px;
+        border-radius: 50%;
+    }
+    .adm{
+        padding-top: 160px;
+        width: 90%;
+        margin: auto;
+
+    }
+    .adm h2{
+        background-color: brown;
+        padding: 10px;
+        border-radius: 25px;
+        width: 25%;
+        margin: auto;
+        color: white;
+    }
+
+    .adm .classes .creche, .nurs, .pry{
+        display: flex;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .adm .classes .creche div, .nurs div, .pry div{
+        margin: auto;
+        width: 50%
+    }
+    .adm .classes .creche img, .nurs img, .pry img{
+        width: 300px;
+        height: 250px;
+    }
+
+    .classes .btn{
+        margin: auto;
+        text-align: center;
+    }
+
+}
+
+/* for small screen */
+@media (max-width:767px) {
+    .first-div{
+        margin: auto;
+        width:100%;
+        margin-top: -20px;
+    }
+
+    .first-div .mission, .vision, .program{
+        width: 100%;
+        height: 300px;
+        padding: 15px;
+        background-color: white;
+        border-radius: 15px;
+        margin-top: -50px;
+        margin: auto;
+    }
+    
+    .first-div .text{
+        /* use shadow instead of bg color */
+        border-radius: 15px;
+        background-image: url("../img/cards-1.333bdc3e31b2.jpg");
+        width: 90% !important;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        margin: auto;
+        padding: 15px;
+
+    }
+
+    .first-div div h3 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .second-div, .third-div{
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .second-div .about h2, .third-div h2{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .second-div .about{
+        width: 90%;
+        margin: auto;
+        text-align: justify;
+    }
+
+    .event{
+        display: flex;
+        margin: auto;
+        margin-top: 70px;
+    }
+    .event div{
+        width: 200px;
+        margin-inline: auto;
+    }
+
+    .event div img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .adm{
+        padding-top: 160px;
+        width: 90%;
+        margin: auto;
+    }
+
+
+    .adm h2{
+        background-color: brown;
+        padding: 5px;
+        border-radius: 25px;
+        margin: auto;
+        color: white;
+    }
+
+    .adm .classes .creche, .nurs, .pry{
+        width: 100%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .adm .classes .creche img, .nurs img, .pry img{
+        width: 100%;
+        margin: auto;
+        height: 200px;
+    }
+
+    .adm .classes .desc {
+        margin-top: 20px;
+    }
+
+    .adm .classes .desc h3{
+        font-weight: bold;
+        color: brown;
+    }
+}
