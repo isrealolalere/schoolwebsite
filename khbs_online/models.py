@@ -7,7 +7,7 @@ from django.conf import settings
 class User_info(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     user_password = models.CharField(max_length=100)
-    user_img = models.ImageField(upload_to='user-images', null=True)
+    user_img = models.ImageField(upload_to='profile-images', null=True)
 
     def __str__(self):
         return self.user.username
