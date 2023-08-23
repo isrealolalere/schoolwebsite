@@ -15,6 +15,8 @@ from pathlib import Path
 import cloudinary_storage
 # import dj_database_url
 
+from django.utils.translation import gettext_lazy as _
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -90,25 +93,15 @@ WSGI_APPLICATION = 'khbs_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# railway postgresql
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:x6vJy8NgfJCMuBzOEvPv@containers-us-west-117.railway.app:6024/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'x6vJy8NgfJCMuBzOEvPv',
-        'HOST': 'containers-us-west-117.railway.app',
-        'PORT': '6024',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Add railway postgresql
+
 
 
 # Password validation
@@ -133,7 +126,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+]
+
+LANGUAGE_CODE = 'en'  # Default language code
+
+USE_L10N = True
 
 TIME_ZONE = 'UTC'
 
@@ -141,7 +141,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -161,11 +163,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/khbs/online/signin'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dxngeghlx',
-    'API_KEY' : '992421254455961',
-    'API_SECRET' : 'c4KUWfRe3DBxs8qw0EjqmTsm134',
+# Add CLOUDINARY_STORAGE
 
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

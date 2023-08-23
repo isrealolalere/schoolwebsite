@@ -1,5 +1,6 @@
 {% extends 'khbs/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Home - KHBS{% endblock %}
 {% block extra_style %}
@@ -10,6 +11,7 @@ rel="stylesheet"
 {% endblock extra_style %}
 
 {% block content %}
+
 <div class="container me-auto">
     <div class="first-div">
         <div class="mission">
@@ -48,6 +50,25 @@ rel="stylesheet"
             creche and primary school programs to our online adult classes, 
             we are committed to empowering individuals to excel in all areas 
             of their endeavors... <a href="{% url 'about' %}"><u>Read more about us</u></a>
+            <br><br>
+
+
+            {% trans "Let's translate this " %}
+            {% load i18n %}
+
+            <form method="post" action="{% url 'set_language' %}">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" id="language">
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for lang in languages %}
+                        <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
+                            {{ lang.name_local }} ({{ lang.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Change Language</button>
+            </form>    
         </div>
     </div>
     <div class="third-div">
