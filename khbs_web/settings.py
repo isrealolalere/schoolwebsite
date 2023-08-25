@@ -93,15 +93,25 @@ WSGI_APPLICATION = 'khbs_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# railway postgresql
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:x6vJy8NgfJCMuBzOEvPv@containers-us-west-117.railway.app:6024/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'x6vJy8NgfJCMuBzOEvPv',
+        'HOST': 'containers-us-west-117.railway.app',
+        'PORT': '6024',
     }
 }
-
-# Add railway postgresql
-
 
 
 # Password validation
@@ -163,5 +173,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/khbs/online/signin'
 
-# Add CLOUDINARY_STORAGE
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dxngeghlx',
+    'API_KEY' : '992421254455961',
+    'API_SECRET' : 'c4KUWfRe3DBxs8qw0EjqmTsm134',
 
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
+# Email Configuration

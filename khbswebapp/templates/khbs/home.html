@@ -2,83 +2,59 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}Home - KHBS{% endblock %}
+{% block title %}{% trans "Home - KHBS" %}{% endblock %}
 {% block extra_style %}
-<link
-href="{% static 'css\home.css' %}"
-rel="stylesheet"
-/>
+<link href="{% static 'css\home.css' %}" rel="stylesheet" />
 {% endblock extra_style %}
 
 {% block content %}
+
+<div id="popup" class="popup">
+    <p style="font-size: 20px;">Admission for 2023/2024 is open! Register your child now!</p>
+</div>
+
 
 <div class="container me-auto">
     <div class="first-div">
         <div class="mission">
             <div class="text miss">
-                <h3>Our Mission</h3>
+                <h3>{% trans "Our Mission" %}</h3>
                 <hr class="me-auto w-25 mt-0 mb-3">
-                To build sound, confident and moral upright achievers
-                that will be a reference anywhere in the world
+                {% trans "To build sound, confident and moral upright achievers that will be a reference anywhere in the world" %}
             </div>
         </div>
         <div class="vision">
             <div class="text vis">
-                <h3>Our vision</h3>
+                <h3>{% trans "Our vision" %}</h3>
                 <hr class="me-auto w-25 mt-0 mb-1">
-                To be a world-class institution providing qualitative
-                education to our stakeholders which makes them become
-                second to none individual in any area of their endeavors
+                {% trans "To be a world-class institution providing qualitative education to our stakeholders which makes them become second to none individual in any area of their endeavors" %}
             </div>
         </div>
         <div class="program">
             <div class="text prog">
-                <h3>Our programs</h3>
+                <h3>{% trans "Our programs" %}</h3>
                 <hr class="me-auto w-25 mt-0 mb-3">
-                Admission into creche, class 1-6,
-                Online adult class,
-                Common enterance, WAEC registeration
+                {% trans "Admission into creche, class 1-6, Online adult class, Common enterance, WAEC registeration" %}
             </div>
         </div>
     </div>
     <div class="second-div" id="abt-us">
         <div class="about">
-            <h2>About Us</h2>
-            Founded in 2008, our school is a leading institution 
-            dedicated to providing top-quality education and fostering 
-            holistic development for children and adults alike. From our 
-            creche and primary school programs to our online adult classes, 
-            we are committed to empowering individuals to excel in all areas 
-            of their endeavors... <a href="{% url 'about' %}"><u>Read more about us</u></a>
-            <br><br>
-
-
-            {% trans "Let's translate this " %}
-            {% load i18n %}
-
-            <form method="post" action="{% url 'set_language' %}">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select name="language" id="language">
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for lang in languages %}
-                        <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
-                            {{ lang.name_local }} ({{ lang.code }})
-                        </option>
-                    {% endfor %}
-                </select>
-                <button type="submit">Change Language</button>
-            </form>    
+            <h2>{% trans "About Us" %}</h2>
+            {% trans "Founded in 2008, our school is a leading institution dedicated to providing top-quality education and fostering holistic development for children and adults alike. From our creche and primary school programs to our online adult classes, we are committed to empowering individuals to excel in all areas of their endeavors...  " %}
+ 
+            <a href="{% url 'about' %}"><u>{% trans "Read more about us" %}</u></a>
+            <br><br> 
         </div>
     </div>
     <div class="third-div">
-        <h2>Events</h2>
+        <h2>{% trans "Events" %}</h2>
         <div class="event">
             <div class="circle">
                 <img src="{% static 'khbs-img\new-img\img (13).jpg' %}" alt="">
             </div>
             <div class="circle">
-                <img src="{% static 'khbs-img\khbs-blur\image (1).png' %}" alt="">
+                <img src="{% static 'khbs-img\new-img\img (2).jpg' %}" alt="">
             </div>
             <div class="circle">
                 <img src="{% static 'khbs-img/new-img/img (1).jpg' %}" alt="">
@@ -86,22 +62,17 @@ rel="stylesheet"
         </div>
         
         <div class="adm">
-            <h2>Our Admissions</h2>
+            <h2>{% trans "Our Admissions" %}</h2>
             <div class="classes" id="classes">
-                <h3 class="me-auto mt-5 mb-5 text-center">Admission for <u><span class="text-primary">2023/2024</span></u> is open into</h3>
+                <h3 class="me-auto mt-5 mb-5 text-center">{% trans "Admission for" %} <u><span class="text-primary">{% trans "2023/2024" %}</span></u> {% trans "is open into" %}</h3>
                 <!--creche section-->
                 <div class="creche">
                     <div class="img">
-                        <img src="{% static 'khbs-img/new-img/img (10).jpg' %}" alt="">
+                        <img src="{% static 'khbs-img\new\new (8).jpeg' %}" alt="">
                     </div>
                     <div class="desc">
-                        <h3>Creche</h3>
-			At our creche, we provide a nurturing and safe environment 
-			for infants and toddlers, ensuring their early years are 
-			filled with love, care, and learning. Our experienced and 
-			dedicated staff members understand the unique needs of young 
-			children and strive to create a warm and welcoming atmosphere.
-
+                        <h3>{% trans "Creche" %}</h3>
+                        {% trans "At our creche, we provide a nurturing and safe environment for infants and toddlers, ensuring their early years are filled with love, care, and learning. Our experienced and dedicated staff members understand the unique needs of young children and strive to create a warm and welcoming atmosphere." %}
                     </div>
                 </div>
                 <div class="nurs">
@@ -109,13 +80,8 @@ rel="stylesheet"
                         <img src="{% static 'khbs-img/image (30).jpg' %}" alt="">
                     </div>
                     <div class="desc">
-                        <h3>Nursery</h3>
-			Our nursery section is designed to provide a seamless 
-			transition from the creche to a more structured learning 
-			environment. We understand that each child is unique and 
-			has their own pace of development. Our nurturing teachers 
-			create an inclusive and engaging atmosphere where children 
-			can thrive and flourish.
+                        <h3>{% trans "Nursery" %}</h3>
+                        {% trans "Our nursery section is designed to provide a seamless transition from the creche to a more structured learning environment. We understand that each child is unique and has their own pace of development. Our nurturing teachers create an inclusive and engaging atmosphere where children can thrive and flourish." %}
                     </div>
                 </div>
                 <div class="pry">
@@ -123,20 +89,33 @@ rel="stylesheet"
                         <img src="{% static 'khbs-img/image (29).jpg' %}" alt="">
                     </div>
                     <div class="desc">
-                        <h3>Primary</h3>
-			Our primary section lays the foundation for lifelong 
-			learning and prepares students for a successful academic 
-			journey. We create a stimulating learning environment 
-			that encourages critical thinking, collaboration, and a 
-			passion for knowledge. Our dedicated teachers instill a 
-			love for learning and empower students to become confident, 
-			compassionate, and responsible individuals.
+                        <h3>{% trans "Primary" %}</h3>
+                        {% trans "Our primary section lays the foundation for lifelong learning and prepares students for a successful academic journey. We create a stimulating learning environment that encourages critical thinking, collaboration, and a passion for knowledge. Our dedicated teachers instill a love for learning and empower students to become confident, compassionate, and responsible individuals." %}
                     </div>
                 </div>
 
-                <h3 id="reg" class="me-auto text-center"><a href="{% url 'register1' %}" class="btn btn-primary mt-5 btn-rounded me-auto"><u>Click Here To Register Your Child Today</u></a></h3>
+                <h3 id="reg" class="me-auto text-center"><a href="{% url 'register1' %}" class="btn btn-primary mt-5 btn-rounded me-auto"><u>{% trans "Click Here To Register Your Child Today" %}</u></a></h3>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var popup = document.getElementById("popup");
+      
+      // Show the popup when the page loads
+      setTimeout(function () {
+        popup.style.display = "block";
+      }, 1000); // Adjust the delay as needed
+      
+      // Hide the popup after 10 seconds
+      setTimeout(function () {
+        popup.style.display = "none";
+      }, 10000);
+    });
+</script>
+    
 {% endblock %}

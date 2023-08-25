@@ -1,8 +1,10 @@
+
 {% extends 'khbs/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-About US
+{% trans "About Us" %}
 {% endblock title %} 
 
 {% block extra_style %}
@@ -11,9 +13,26 @@ About US
 
 {% block header %}
 <div class="parent">
+    {% block lang_form %}
+    <form method="post" action="{% url 'set_language' %}">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select name="language" id="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for lang in languages %}
+                <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
+                    {{ lang.name_local }} ({{ lang.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">{% trans "Change Language" %}</button>
+    </form>  
+    {% endblock lang_form %}
     <div class="header">
             <div class="title">
-                <i><h3 class="text-primary text-light text-center"><u>About Us</u></h3></i>
+                <i><h3 class="text-primary text-light text-center"><u>{% trans "About Us" %}</u></h3></i>
                 <br>
             </div>
         </h3>
@@ -25,28 +44,27 @@ About US
 <div class="container mt-4 w-100">
     <div class="container text-section w-100 me-3">
         <p>
-            Founded in 2008, our school is a leading institution dedicated to providing top-quality education and fostering holistic development for children and adults alike. From our creche and primary school programs to our online adult classes, we are committed to empowering individuals to excel in all areas of their endeavors.
+            {% trans "Founded in 2008, our school is a leading institution dedicated to providing top-quality education and fostering holistic development for children and adults alike. From our creche and primary school programs to our online adult classes, we are committed to empowering individuals to excel in all areas of their endeavors." %}
         </p>
 
         <p>
-            At our school, we believe in nurturing young minds from an early age, which is why our creche program offers a safe and stimulating environment for infants and toddlers. Our experienced and caring staff create a nurturing atmosphere that promotes early learning, social skills, and emotional development, setting the foundation for a successful educational journey.
+            {% trans "At our school, we believe in nurturing young minds from an early age, which is why our creche program offers a safe and stimulating environment for infants and toddlers. Our experienced and caring staff create a nurturing atmosphere that promotes early learning, social skills, and emotional development, setting the foundation for a successful educational journey." %}
         </p>
 
         <p>
-            For children in grades 1 to 6, we provide a comprehensive primary school program that focuses on academic excellence, character development, and personal growth. Our dedicated teachers employ innovative teaching methods, interactive activities, and a well-rounded curriculum to ensure that every child receives a well-rounded education. We strive to create a supportive and inclusive community where students feel valued and inspired to reach their full potential.
+            {% trans "For children in grades 1 to 6, we provide a comprehensive primary school program that focuses on academic excellence, character development, and personal growth. Our dedicated teachers employ innovative teaching methods, interactive activities, and a well-rounded curriculum to ensure that every child receives a well-rounded education. We strive to create a supportive and inclusive community where students feel valued and inspired to reach their full potential." %}
         </p>
 
         <p>
-            In addition to our primary school programs, we offer online adult classes designed to meet the needs of lifelong learners. Whether you're looking to enhance your professional skills or pursue personal interests, our experienced instructors provide engaging and flexible learning opportunities. With our online adult classes, you can expand your knowledge, acquire new skills, and stay ahead in today's fast-paced world.
+            {% trans "In addition to our primary school programs, we offer online adult classes designed to meet the needs of lifelong learners. Whether you're looking to enhance your professional skills or pursue personal interests, our experienced instructors provide engaging and flexible learning opportunities. With our online adult classes, you can expand your knowledge, acquire new skills, and stay ahead in today's fast-paced world." %}
         </p>
 
         <p>
-            Our vision is to be a world-class institution that provides qualitative education to our stakeholders, empowering them to become second to none individuals in any area of their endeavors. We strive to create an environment that fosters academic excellence, critical thinking, creativity, and a strong sense of community.
+            {% trans "Our vision is to be a world-class institution that provides qualitative education to our stakeholders, empowering them to become second to none individuals in any area of their endeavors. We strive to create an environment that fosters academic excellence, critical thinking, creativity, and a strong sense of community." %}
         </p>
 
         <p>
-            We invite you to explore our website to learn more about our programs, faculty, facilities, and the many opportunities we offer for educational and personal growth. Join us at our school, where learning is a lifelong journey, and together, we can shape a brighter future for our students and our society.
-            Welcome to a place where educational excellence meets limitless possibilities.
+            {% trans "We invite you to explore our website to learn more about our programs, faculty, facilities, and the many opportunities we offer for educational and personal growth. Join us at our school, where learning is a lifelong journey, and together, we can shape a brighter future for our students and our society. Welcome to a place where educational excellence meets limitless possibilities." %}
         </p>
     </div>
 

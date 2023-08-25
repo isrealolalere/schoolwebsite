@@ -1,17 +1,33 @@
 {% extends 'khbs/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
-{% block title %}Register - KHBS{% endblock %}
+{% block title %}{% trans "Register - KHBS" %}{% endblock %}
 {% block extra_style %}
-<link
-href="{% static 'css\register2.css' %}"
-rel="stylesheet"
-/>
+<link href="{% static 'css/register2.css' %}" rel="stylesheet" />
 {% endblock extra_style %}
 
 
 {% block header %}
+{% block lang_form %}
+<form method="post" action="{% url 'set_language' %}">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language" id="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for lang in languages %}
+            <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
+                {{ lang.name_local }} ({{ lang.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <button type="submit">{% trans "Change Language" %}</button>
+</form>  
+{% endblock lang_form %}
+
 <div class="container-slider mb-5">
     <main>
         <img src="{% static 'khbs-img/new-img/img (8).jpg' %}" alt="" class="slide">
@@ -20,27 +36,23 @@ rel="stylesheet"
         <img src="{% static 'img\eng.jpg' %}" alt="" class="slide">
     </main>
     <div class="btn-nav">
-        <button onclick="goPrev()">
-            Prev
-        </button>
-        <button onclick="goNext()">
-            Next
-        </button>
+        <button onclick="goPrev()">{% trans "Prev" %}</button>
+        <button onclick="goNext()">{% trans "Next" %}</button>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="container-form">
-    <h2 class="mt-5 mb-5 text-center">PARENT INFORMATIONS</h2>
+    <h2 class="mt-5 mb-5 text-center">{% trans "PARENT INFORMATION" %}</h2>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="img-preview mb-3 mt-2">
             <div class="fath-img">
-                <img id="previewImageFather" src="#" alt="Preview Image" style="display: none; width: 150px; height: 150px;">
+                <img id="previewImageFather" src="#" alt="{% trans 'Preview Image' %}" style="display: none; width: 150px; height: 150px;">
             </div>
             <div class="moth-img">
-                <img id="previewImageMother" src="#" alt="Preview Image" style="display: none; width: 150px; height: 150px;">
+                <img id="previewImageMother" src="#" alt="{% trans 'Preview Image' %}" style="display: none; width: 150px; height: 150px;">
             </div>
         </div>
         <div class="parent-img">
@@ -51,7 +63,7 @@ rel="stylesheet"
                 {{ parent_form.mother_img |as_crispy_field }}
             </div>
         </div>
-        <h5 class="mt-5 mb-5">PARENT NAMES :</h5>
+        <h5 class="mt-5 mb-5">{% trans "PARENT NAMES" %} :</h5>
         <div class="names mt-5">
             <div class="father">
                 <div class="fath-name">
@@ -70,7 +82,7 @@ rel="stylesheet"
                 </div>
             </div>
         </div>
-        <h5 class="mt-5 mb-5">PARENT ADDRESS :</h5>
+        <h5 class="mt-5 mb-5">{% trans "PARENT ADDRESS" %} :</h5>
         <div class="address mt-5">
             <div class="city">
                 {{ parent_form.city |as_crispy_field }}
@@ -82,7 +94,7 @@ rel="stylesheet"
                 {{ parent_form.country |as_crispy_field }}
             </div>
         </div>
-        <h5 class="mt-5 mb-5">PARENT CONTACT :</h5>
+        <h5 class="mt-5 mb-5">{% trans "PARENT CONTACT" %} :</h5>
         <div class="contact mt-5">
             <div class="phone1">
                 {{ parent_form.phone_number1 |as_crispy_field }}
@@ -91,10 +103,9 @@ rel="stylesheet"
                 {{ parent_form.phone_number2 |as_crispy_field }}
             </div>
         </div>
-        <input type="submit" value="Finalize registration" class="btn btn-primary mt-5">
+        <input type="submit" value="{% trans 'Finalize registration' %}" class="btn btn-primary mt-5">
     </form>
 </div>
-
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.19.3/css/mdb.min.css" integrity="sha384-..." crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.19.3/js/mdb.min.js" integrity="sha384-..." crossorigin="anonymous"></script>

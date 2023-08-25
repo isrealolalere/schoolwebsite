@@ -39,3 +39,11 @@ class Parent_info(models.Model):
     )
     phone_number1 = models.CharField(validators=[phone_regex], max_length=20)
     phone_number2 = models.CharField(validators=[phone_regex], max_length=20)
+
+
+class NewsLetterEmail(models.Model):
+    email = models.CharField(max_length=250)
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.email}"

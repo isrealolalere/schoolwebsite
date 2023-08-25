@@ -1,47 +1,43 @@
-<!-- Footer -->
-<footer class="bg-dark text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-  
-        <!-- Whatsapp -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-  
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-          ><i class="fab fa-instagram"></i
-        ></a>
-  
-      </section>
-      <!-- Section: Social media -->
-  
+{% load i18n %}
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <ul class="list-unstyled">
+          <li>Email: isrealolalere09@gmail.com</li>
+          <li>Phone: <br>
+            <i class="fas fa-phone-alt"></i> <i>+229 97 13 04 61</i>
+            <br>
+            <i class="fas fa-phone-alt"></i> <i>+229 97 77 64 96</i>
+            <br>
+          </li>
+          <li>Address: {% trans "Behind former delegate adissa house, Oke-Ola, Pobe, Federal Republic of Benin" %}</li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Follow Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Facebook</a></li>
+          <li><a href="#" class="text-white">Github</a></li>
+          <li><a href="#" class="text-white">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Newsletter</h5>
+        <form action="{% url 'news_letter' %}" method="post" class="input-group">
+          {% csrf_token %}
+          <input type="email" name="newsemail" class="form-control" placeholder="Enter your email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
     </div>
-    <!-- Grid container -->
-  
-    <!-- Contact -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      <i class="fas fa-phone-alt"></i> <i>+229 97 13 04 61</i>
-      <br>
-      <i class="fas fa-phone-alt"></i> <i>+229 97 77 64 96</i>
-      <br><br>
-      <i class="fas fa-map-marker-alt"></i>
-      Behind former delegate adissa house, Oke-Ola, Pobe, Federal Republic of Benin
-    </div>
-    <!-- Contact -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      KHBS © 2023 Copyright:
-    </div>
-    <!-- Copyright -->
+  </div>
+  <div class="bg-primary text-center py-2">
+    <p class="mb-0">KHBS © 2023 Copyright:</p>
+  </div>
 </footer>
-<!-- Footer -->
   
   

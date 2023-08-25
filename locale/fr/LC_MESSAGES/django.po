@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 04:16+0100\n"
+"POT-Creation-Date: 2023-08-24 05:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,12 +20,371 @@ msgstr ""
 
 #: .\khbs_web\settings.py:140
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: .\khbs_web\settings.py:141
 msgid "French"
+msgstr "Français"
+
+#: .\khbswebapp\templates\khbs\about.html:7
+#: .\khbswebapp\templates\khbs\about.html:35
+#: .\khbswebapp\templates\khbs\home.html:38
+#: .\khbswebapp\templates\khbs\navbar.html:32
+msgid "About Us"
+msgstr "À Propos De Nous"
+
+#: .\khbswebapp\templates\khbs\about.html:30
+#: .\khbswebapp\templates\khbs\admission1-reg.html:27
+#: .\khbswebapp\templates\khbs\admission2-reg.html:27
+#: .\khbswebapp\templates\khbs\base.html:58
+msgid "Change Language"
+msgstr "Changer la Langue"
+
+#: .\khbswebapp\templates\khbs\about.html:47
+#, fuzzy
+#| msgid ""
+#| "Founded in 2008, our school is a leading institution dedicated to "
+#| "providing top-quality education and fostering holistic development for "
+#| "children and adults alike. From our creche and primary school programs to "
+#| "our online adult classes, we are committed to empowering individuals to "
+#| "excel in all areas of their endeavors...  "
+msgid ""
+"Founded in 2008, our school is a leading institution dedicated to providing "
+"top-quality education and fostering holistic development for children and "
+"adults alike. From our creche and primary school programs to our online "
+"adult classes, we are committed to empowering individuals to excel in all "
+"areas of their endeavors."
+msgstr ""
+"Fondée en 2008, notre école est une institution de premier plan dédiée à la "
+"fourniture d'une éducation de haute qualité et à la promotion du "
+"développement holistique des enfants et des adultes. De nos programmes de "
+"crèche et d'école primaire à nos cours en ligne pour adultes, nous nous "
+"engageons à habiliter les individus à exceller dans tous les domaines de "
+"leurs entreprises..."
+
+#: .\khbswebapp\templates\khbs\about.html:51
+msgid ""
+"At our school, we believe in nurturing young minds from an early age, which "
+"is why our creche program offers a safe and stimulating environment for "
+"infants and toddlers. Our experienced and caring staff create a nurturing "
+"atmosphere that promotes early learning, social skills, and emotional "
+"development, setting the foundation for a successful educational journey."
+msgstr ""
+"Dans notre école, nous croyons en l'épanouissement des jeunes esprits dès "
+"leur plus jeune âge, c'est pourquoi notre programme de crèche offre un "
+"environnement sûr et stimulant pour les nourrissons et les tout-petits. "
+"Notre personnel expérimenté et attentionné crée une atmosphère bienveillante "
+"qui favorise l'apprentissage précoce, les compétences sociales et le "
+"développement émotionnel, posant ainsi les bases d'un parcours éducatif "
+"réussi."
+
+#: .\khbswebapp\templates\khbs\about.html:55
+msgid ""
+"For children in grades 1 to 6, we provide a comprehensive primary school "
+"program that focuses on academic excellence, character development, and "
+"personal growth. Our dedicated teachers employ innovative teaching methods, "
+"interactive activities, and a well-rounded curriculum to ensure that every "
+"child receives a well-rounded education. We strive to create a supportive "
+"and inclusive community where students feel valued and inspired to reach "
+"their full potential."
+msgstr ""
+"Pour les enfants de la 1ère à la 6ème année, nous offrons un programme "
+"scolaire primaire complet axé sur l'excellence académique, le développement "
+"du caractère et la croissance personnelle. Nos enseignants dévoués utilisent "
+"des méthodes pédagogiques novatrices, des activités interactives et un "
+"curriculum complet pour s'assurer que chaque enfant reçoive une éducation "
+"complète. Nous nous efforçons de créer une communauté solidaire et inclusive "
+"où les élèves se sentent valorisés et inspirés à atteindre leur plein "
+"potentiel."
+
+#: .\khbswebapp\templates\khbs\about.html:59
+msgid ""
+"In addition to our primary school programs, we offer online adult classes "
+"designed to meet the needs of lifelong learners. Whether you're looking to "
+"enhance your professional skills or pursue personal interests, our "
+"experienced instructors provide engaging and flexible learning "
+"opportunities. With our online adult classes, you can expand your knowledge, "
+"acquire new skills, and stay ahead in today's fast-paced world."
+msgstr ""
+"En plus de nos programmes scolaires primaires, nous proposons des cours pour "
+"adultes en ligne conçus pour répondre aux besoins des apprenants tout au "
+"long de la vie. Que vous cherchiez à améliorer vos compétences "
+"professionnelles ou à poursuivre des intérêts personnels, nos instructeurs "
+"expérimentés offrent des opportunités d'apprentissage engageantes et "
+"flexibles. Avec nos cours pour adultes en ligne, vous pouvez élargir vos "
+"connaissances, acquérir de nouvelles compétences et rester en avance dans le "
+"monde d'aujourd'hui en constante évolution."
+
+#: .\khbswebapp\templates\khbs\about.html:63
+#, fuzzy
+#| msgid ""
+#| "To be a world-class institution providing qualitative education to our "
+#| "stakeholders which makes them become second to none individual in any "
+#| "area of their endeavors"
+msgid ""
+"Our vision is to be a world-class institution that provides qualitative "
+"education to our stakeholders, empowering them to become second to none "
+"individuals in any area of their endeavors. We strive to create an "
+"environment that fosters academic excellence, critical thinking, creativity, "
+"and a strong sense of community."
+msgstr ""
+"Être une institution de classe mondiale offrant une éducation qualitative à "
+"nos parties prenantes, ce qui les rend inégalées dans n'importe quel domaine "
+"de leurs entreprises"
+
+#: .\khbswebapp\templates\khbs\about.html:67
+msgid ""
+"We invite you to explore our website to learn more about our programs, "
+"faculty, facilities, and the many opportunities we offer for educational and "
+"personal growth. Join us at our school, where learning is a lifelong "
+"journey, and together, we can shape a brighter future for our students and "
+"our society. Welcome to a place where educational excellence meets limitless "
+"possibilities."
+msgstr ""
+"Nous vous invitons à explorer notre site Web pour en savoir plus sur nos "
+"programmes, notre corps enseignant, nos installations et les nombreuses "
+"opportunités que nous offrons pour la croissance éducative et personnelle. "
+"Rejoignez-nous dans notre école, où l'apprentissage est un voyage tout au "
+"long de la vie, et ensemble, nous pouvons façonner un avenir plus radieux "
+"pour nos élèves et notre société. Bienvenue dans un endroit où l'excellence "
+"éducative rencontre des possibilités illimitées."
+
+#: .\khbswebapp\templates\khbs\admission1-reg.html:6
+#: .\khbswebapp\templates\khbs\admission2-reg.html:6
+#, fuzzy
+#| msgid "Home - KHBS"
+msgid "Register - KHBS"
+msgstr "Accueil - KHBS"
+
+#: .\khbswebapp\templates\khbs\admission1-reg.html:41
+#: .\khbswebapp\templates\khbs\admission2-reg.html:39
+msgid "Prev"
 msgstr ""
 
-#: .\khbswebapp\templates\khbs\home.html:54
-msgid "Let's translate this "
-msgstr "Traduisons ceci"
+#: .\khbswebapp\templates\khbs\admission1-reg.html:44
+#: .\khbswebapp\templates\khbs\admission1-reg.html:97
+#: .\khbswebapp\templates\khbs\admission2-reg.html:40
+msgid "Next"
+msgstr ""
+
+#: .\khbswebapp\templates\khbs\admission1-reg.html:52
+msgid "STUDENT INFORMATION"
+msgstr "INFORMATION DE L'ÉTUDIANT"
+
+#: .\khbswebapp\templates\khbs\admission1-reg.html:56
+#: .\khbswebapp\templates\khbs\admission2-reg.html:52
+#: .\khbswebapp\templates\khbs\admission2-reg.html:55
+msgid "Preview Image"
+msgstr "Image de Prévisualisation"
+
+#: .\khbswebapp\templates\khbs\admission1-reg.html:84
+msgid "STUDENT ADDRESS"
+msgstr "ADRESSE DE L'ÉTUDIANT"
+
+#: .\khbswebapp\templates\khbs\admission2-reg.html:47
+msgid "PARENT INFORMATION"
+msgstr "INFORMATIONS SUR LES PARENTS"
+
+#: .\khbswebapp\templates\khbs\admission2-reg.html:66
+msgid "PARENT NAMES"
+msgstr "NOMS DES PARENTS"
+
+#: .\khbswebapp\templates\khbs\admission2-reg.html:85
+msgid "PARENT ADDRESS"
+msgstr "ADRESSE DES PARENTS"
+
+#: .\khbswebapp\templates\khbs\admission2-reg.html:97
+msgid "PARENT CONTACT"
+msgstr "CONTACT DES PARENTS"
+
+#: .\khbswebapp\templates\khbs\admission2-reg.html:106
+msgid "Finalize registration"
+msgstr "Finaliser l'inscription"
+
+#: .\khbswebapp\templates\khbs\base.html:4
+msgid "en"
+msgstr "en"
+
+#: .\khbswebapp\templates\khbs\base.html:63
+msgid "Welcome to King's Heart Bilingual School"
+msgstr "Bienvenue à l'École Bilingue King's Heart"
+
+#: .\khbswebapp\templates\khbs\base.html:65
+msgid "Building genius since 2008"
+msgstr "Construire le génie depuis 2008"
+
+#: .\khbswebapp\templates\khbs\footer.html:35
+msgid ""
+"Behind former delegate adissa house, Oke-Ola, Pobe, Federal Republic of Benin"
+msgstr ""
+"Derrière l'ancienne maison du délégué Adissa, Oke-Ola, Pobe, République du Bénin"
+
+
+#: .\khbswebapp\templates\khbs\home.html:5
+msgid "Home - KHBS"
+msgstr "Accueil - KHBS"
+
+#: .\khbswebapp\templates\khbs\home.html:16
+msgid "Our Mission"
+msgstr "Notre Mission"
+
+#: .\khbswebapp\templates\khbs\home.html:18
+msgid ""
+"To build sound, confident and moral upright achievers that will be a "
+"reference anywhere in the world"
+msgstr ""
+"Construire des réussites solides, confiantes et moralement intègres qui "
+"seront une référence partout dans le monde"
+
+#: .\khbswebapp\templates\khbs\home.html:23
+msgid "Our vision"
+msgstr "Notre vision"
+
+#: .\khbswebapp\templates\khbs\home.html:25
+msgid ""
+"To be a world-class institution providing qualitative education to our "
+"stakeholders which makes them become second to none individual in any area "
+"of their endeavors"
+msgstr ""
+"Être une institution de classe mondiale offrant une éducation qualitative à "
+"nos parties prenantes, ce qui les rend inégalées dans n'importe quel domaine "
+"de leurs entreprises"
+
+#: .\khbswebapp\templates\khbs\home.html:30
+msgid "Our programs"
+msgstr "Nos programmes"
+
+#: .\khbswebapp\templates\khbs\home.html:32
+msgid ""
+"Admission into creche, class 1-6, Online adult class, Common enterance, WAEC "
+"registeration"
+msgstr ""
+"Admission en crèche, classes de 1 à 6, cours pour adultes en ligne, examen "
+"d'entrée commun, inscription au WAEC"
+
+#: .\khbswebapp\templates\khbs\home.html:39
+msgid ""
+"Founded in 2008, our school is a leading institution dedicated to providing "
+"top-quality education and fostering holistic development for children and "
+"adults alike. From our creche and primary school programs to our online "
+"adult classes, we are committed to empowering individuals to excel in all "
+"areas of their endeavors...  "
+msgstr ""
+"Fondée en 2008, notre école est une institution de premier plan dédiée à la "
+"fourniture d'une éducation de haute qualité et à la promotion du "
+"développement holistique des enfants et des adultes. De nos programmes de "
+"crèche et d'école primaire à nos cours en ligne pour adultes, nous nous "
+"engageons à habiliter les individus à exceller dans tous les domaines de "
+"leurs entreprises..."
+
+#: .\khbswebapp\templates\khbs\home.html:41
+msgid "Read more about us"
+msgstr "En savoir plus sur nous"
+
+#: .\khbswebapp\templates\khbs\home.html:46
+msgid "Events"
+msgstr "Événements"
+
+#: .\khbswebapp\templates\khbs\home.html:60
+msgid "Our Admissions"
+msgstr "Nos Admissions"
+
+#: .\khbswebapp\templates\khbs\home.html:62
+msgid "Admission for"
+msgstr "Admission pour"
+
+#: .\khbswebapp\templates\khbs\home.html:62
+msgid "2023/2024"
+msgstr "2023/2024"
+
+#: .\khbswebapp\templates\khbs\home.html:62
+msgid "is open into"
+msgstr "est ouverte pour"
+
+#: .\khbswebapp\templates\khbs\home.html:69
+msgid "Creche"
+msgstr "Crèche"
+
+#: .\khbswebapp\templates\khbs\home.html:70
+msgid ""
+"At our creche, we provide a nurturing and safe environment for infants and "
+"toddlers, ensuring their early years are filled with love, care, and "
+"learning. Our experienced and dedicated staff members understand the unique "
+"needs of young children and strive to create a warm and welcoming atmosphere."
+msgstr ""
+"Dans notre crèche, nous offrons un environnement d'épanouissement et de "
+"sécurité aux nourrissons et aux tout-petits, en veillant à ce que leurs "
+"premières années soient remplies d'amour, de soins et d'apprentissage. Nos "
+"membres du personnel expérimentés et dévoués comprennent les besoins uniques "
+"des jeunes enfants et s'efforcent de créer une atmosphère chaleureuse et "
+"accueillante."
+
+#: .\khbswebapp\templates\khbs\home.html:78
+msgid "Nursery"
+msgstr "École Maternelle"
+
+#: .\khbswebapp\templates\khbs\home.html:79
+msgid ""
+"Our nursery section is designed to provide a seamless transition from the "
+"creche to a more structured learning environment. We understand that each "
+"child is unique and has their own pace of development. Our nurturing "
+"teachers create an inclusive and engaging atmosphere where children can "
+"thrive and flourish."
+msgstr ""
+"Notre section de l'école maternelle est conçue pour assurer une transition "
+"en douceur de la crèche à un environnement d'apprentissage plus structuré. "
+"Nous comprenons que chaque enfant est unique et a son propre rythme de "
+"développement. Nos enseignants bienveillants créent une atmosphère inclusive "
+"et engageante où les enfants peuvent s'épanouir."
+
+#: .\khbswebapp\templates\khbs\home.html:87
+msgid "Primary"
+msgstr "École Primaire"
+
+#: .\khbswebapp\templates\khbs\home.html:88
+msgid ""
+"Our primary section lays the foundation for lifelong learning and prepares "
+"students for a successful academic journey. We create a stimulating learning "
+"environment that encourages critical thinking, collaboration, and a passion "
+"for knowledge. Our dedicated teachers instill a love for learning and "
+"empower students to become confident, compassionate, and responsible "
+"individuals."
+msgstr ""
+"Notre section de l'école primaire pose les bases de l'apprentissage tout au "
+"long de la vie et prépare les élèves à un parcours académique réussi. Nous "
+"créons un environnement d'apprentissage stimulant qui encourage la pensée "
+"critique, la collaboration et la passion pour la connaissance. Nos "
+"enseignants dévoués insufflent l'amour de l'apprentissage et "
+"responsabilisent les élèves pour qu'ils deviennent des individus confiants, "
+"compatissants et responsables."
+
+#: .\khbswebapp\templates\khbs\home.html:92
+msgid "Click Here To Register Your Child Today"
+msgstr "Cliquez ici pour inscrire votre enfant dès aujourd'hui"
+
+#: .\khbswebapp\templates\khbs\navbar.html:14
+msgid "Toggle navigation"
+msgstr ""
+
+#: .\khbswebapp\templates\khbs\navbar.html:19
+msgid "KHBS LOGO"
+msgstr "KHBS"
+
+#: .\khbswebapp\templates\khbs\navbar.html:27
+msgid "Home"
+msgstr "Accueil"
+
+#: .\khbswebapp\templates\khbs\navbar.html:37
+msgid "Register"
+msgstr "Inscription"
+
+#: .\khbswebapp\templates\khbs\navbar.html:42
+msgid "Contact"
+msgstr "Contact"
+
+#: .\khbswebapp\templates\khbs\navbar.html:47
+msgid "KHBS-Online"
+msgstr "KHBS-Online"
+
+#~ msgid "Let's translate this "
+#~ msgstr "Traduisons ceci"

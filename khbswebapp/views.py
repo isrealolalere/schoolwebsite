@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from .forms import StudentRegForm, ParentRegForm
 from django.contrib import messages
 from .models import *
+# from django.core.mail import send_mail
 
 # Create your views here.
+
 
 def home(request):
     return render(request, 'khbs/home.html')
@@ -63,3 +65,19 @@ def admission2_reg(request, st_id):
 
 def about(request):
     return render(request, 'khbs/about.html')
+
+
+def news_letter(request):
+    if request.method == 'POST':
+        email = request.POST['newsemail']
+         
+        email_queryset = NewsLetterEmail.objects.filter(email=email)
+        if not email_queryset:
+            NewsLetterEmail.objects.create(
+                email=email
+            )
+            messages.success(request, 'Thanks for subscribing')
+            return redirect('home')
+        else:
+            messages.success(request, 'Email already added')
+            return redirect('home')

@@ -1,87 +1,85 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{% block title %}{% endblock %}</title>
+<html lang="{% trans 'en' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
 
-        <!--CUSTOM STYLE-->
-        <link
-        href="{% static 'css\style.css' %}"
-        rel="stylesheet"
-        />
-        {% block extra_style %}
-        {% endblock extra_style %}
-        <!--END OF CUSTOM STYLE-->
-        
-        <link
-        href="{% static 'mdb5\css\mdb.dark.min.css' %}"
-        rel="stylesheet"
-        />
-        <link
-        href="{% static 'mdb5\css\mdb.dark.min.css.map' %}"
-        rel="stylesheet"
-        />
-        <link
-        href="{% static 'mdb5\css\mdb.dark.rtl.min.css' %}"
-        rel="stylesheet"
-        />
-        <link
-        href="{% static 'mdb5\css\mdb.min.css' %}"
-        rel="stylesheet"
-        />
-        <link
-        href="{% static 'mdb5\css\mdb.rtl.min.css' %}"
-        rel="stylesheet"
-        />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!--CUSTOM STYLE-->
+    <link href="{% static 'css\style.css' %}" rel="stylesheet">
+    {% block extra_style %}{% endblock extra_style %}
+    <!--END OF CUSTOM STYLE-->
 
-        <!--MDB JAVASCRIPT CODE-->
-        <script src="{% static 'mdb5\js\mdb.min.js' %}"></script>
+    <link href="{% static 'mdb5\css\mdb.dark.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mdb5\css\mdb.dark.min.css.map' %}" rel="stylesheet">
+    <link href="{% static 'mdb5\css\mdb.dark.rtl.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mdb5\css\mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mdb5\css\mdb.rtl.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
+    <!--MDB JAVASCRIPT CODE-->
+    <script src="{% static 'mdb5\js\mdb.min.js' %}"></script>
 
-    <body>
-        <!--navbar-->
-        {% block nav_bar %}
-            {% include 'khbs/navbar.html' %}
-        {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-        <!--alert message div-->
-        {% if messages %}
-            {% for msg in messages %}
-                <div class="me-auto w-100 text-center" id="alert-container" style="border-radius: 10px; box-shadow: 0px 0px 3px grey;"></div>
-            {% endfor %}
-        {% endif %}
+<body>
+    <!--navbar-->
+    {% block nav_bar %}
+        {% include 'khbs/navbar.html' %}
+    {% endblock %}
 
-        {% block header %}
-        <div class="parent">
-            <div class="header">
-                <h2>Welcome to King's Heart Bilingual School</h2>
-                <hr class="w-25 mt-3 me-auto mt-1 mb-1 text-light">
-                <h3><i>Building genius since 2008</i></h3>
-            </div>
+    <!--alert message div-->
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="me-auto w-100 text-center" id="alert-container" style="border-radius: 10px; box-shadow: 0px 0px 3px grey;"></div>
+        {% endfor %}
+    {% endif %}
+
+    {% block header %}
+    <div class="parent">
+        {% block lang_form %}
+        <form method="post" action="{% url 'set_language' %}">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language" id="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for lang in languages %}
+                    <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.name_local }} ({{ lang.code }})
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">{% trans "Change Language" %}</button>
+        </form>  
+        {% endblock lang_form %} 
+
+        <div class="header">
+            <h2>{% trans "Welcome to King's Heart Bilingual School" %}</h2>
+            <hr class="w-25 mt-3 me-auto mt-1 mb-1 text-light">
+            <h3><i>{% trans "Building genius since 2008" %}</i></h3>
         </div>
-        {% endblock %}
-        
-        {% block content %} 
-        {% endblock %}
+    </div>
+    {% endblock %}
 
-        <!--footer section-->
-        <div class="mt-5">
-            {% include 'khbs/footer.html' %}
-        </div>
+    {% block content %}
+    {% endblock %}
 
+    <!--footer section-->
+    <div class="mt-5" id="footer">
+        {% include 'khbs/footer.html' %}
+    </div>
 
-        <!--extra script-->
-        {% block extra_script %}
-        {% endblock extra_script %}
+    <!--extra script-->
+    {% block extra_script %}
+    {% endblock extra_script %}
 
-        {% if messages %}
+    {% if messages %}
         {% for msg in messages %}
         <script>
             // Get the alert message and type from Django template variables
@@ -109,7 +107,21 @@
             showAlert(alertMessage);
         </script>
         {% endfor %}
-        {% endif %}
+    {% endif %}
 
-    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var onlineLink = document.querySelector(".online-btn a");
+          onlineLink.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            if (!onlineLink.classList.contains("disabled")) {
+              // Check if the link is not disabled
+              alert("KHBS-Online Coming Soon..."); // Show the popup message
+            }
+          });
+        });
+    </script>
+        
+
+</body>
 </html>

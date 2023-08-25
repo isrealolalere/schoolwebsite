@@ -22,15 +22,16 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.i18n import i18n_patterns
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
-
-urlpatterns = i18n_patterns(
+urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns += i18n_patterns(
     path('khbs/', include('khbswebapp.urls')),
     path('khbs/online/', include('khbs_online.urls')),
-    prefix_default_language=True,
+
+    # to prevent the default language on page load
+    prefix_default_language=False,
 )
 
 urlpatterns += staticfiles_urlpatterns()
