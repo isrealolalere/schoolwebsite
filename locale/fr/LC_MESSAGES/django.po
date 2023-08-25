@@ -31,7 +31,7 @@ msgstr "Français"
 #: .\khbswebapp\templates\khbs\home.html:38
 #: .\khbswebapp\templates\khbs\navbar.html:32
 msgid "About Us"
-msgstr "À Propos De Nous"
+msgstr "À Propos"
 
 #: .\khbswebapp\templates\khbs\about.html:30
 #: .\khbswebapp\templates\khbs\admission1-reg.html:27

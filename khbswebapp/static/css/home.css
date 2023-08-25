@@ -115,6 +115,20 @@
 
 /* for small screen */
 @media (max-width:767px) {
+    .popup {
+        width: 90%;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+
     .first-div{
         margin: auto;
         width:100%;
@@ -146,7 +160,7 @@
     }
 
     .first-div div h3 {
-        margin-top: 50px;
+        margin-top: 20px;
         text-align: center;
         font-weight: bold;
     }
@@ -166,23 +180,23 @@
         margin: auto;
         text-align: justify;
     }
-
+/* commencing */
     .event{
         display: flex;
         margin: auto;
         margin-top: 70px;
     }
     .event div{
-        width: 200px;
+        width: 150px;
         margin-inline: auto;
     }
 
     .event div img{
-        width: 140px;
-        height: 100px;
+        width: 100px;
+        height: 80px;
         border-radius: 10px;
     }
-
+/* last */
     .adm{
         padding-top: 160px;
         width: 90%;
